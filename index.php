@@ -1,7 +1,7 @@
 <?php
   	// 引入类
 	require_once('inc/require.php');
-	
+
 	// 重定向
   	if(isset($_GET['id'])) {
     	$url_c = new url();
@@ -32,7 +32,7 @@
 	    <div class="wrap">
   			<!--网页显示标题-->
 			<div class="meta">
-				<h2 class="title"><?php echo get_title(); ?></h2>
+				<h2 class="title"><?php echo get_big_title(); ?><?php echo get_title(); ?></h2>
 				<h3 class="description"><?php echo get_description(); ?></h3>
 			</div>
 			<br><br>
@@ -45,7 +45,7 @@
 				<input id="shorturlcopy" type="button" value="复制" onclick="copyText()" />
 			</div>
 			<div class="footer">
-				Copyright &copy; <a href="https://www.baoshuo.ren/">宝硕小站</a> | <a href="https://github.com/Caringor/CRZ.im/" title="源码" target="_blank">Github</a>
+				<?php echo get_hoster();?> | <a href="https://github.com/chenxuuu/Shortlink" target="_blank">源码</a>
 			</div>
 	    </div>
 		<!--嵌入 JS 代码-->
@@ -64,5 +64,5 @@
 		<script type="text/javascript" src="asset/js/app.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 	</body>
-	
+
 </html>
