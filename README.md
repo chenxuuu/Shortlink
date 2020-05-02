@@ -1,6 +1,6 @@
 # ShortLink
 
-代码基于基于 [CRZ.im](https://github.com/Caringor/CRZ.im) 二次开发的 [Shortlink](https://github.com/renbaoshuo/Shortlink) 三次开发，感谢原作者们的辛勤劳动。
+代码基于**基于 [CRZ.im](https://github.com/Caringor/CRZ.im) 二次开发的 [Shortlink](https://github.com/renbaoshuo/Shortlink)** 三次开发，感谢原作者们的辛勤劳动。
 
 ## 概述
 
