@@ -18,19 +18,12 @@
         }
         // 生成地址 ID
         public function create_id($url, $size = 4) {
-            $md5 = md5($url);
-            // 随机抽取 MD5 中的字符作为 ID
-            $id = '';
-            for($i = 0; $i < $size; $i++) {
-              $rand_id = rand(0, strlen($md5) - 1);
-              $id .= $md5[$rand_id];
+            $str = "";
+            for($i=0;$i<$size;$i++)
+            {
+                $str .= mb_chr(rand(19968, 40869));
             }
-            // ID 检测
-            if($this->has_id($id)) {
-              return $this->create_id($url, $size);
-            } else {
-              return $id;
-            }
+            return $str;
         }
         // 查询 ID 号
         public function get_id($url) {
