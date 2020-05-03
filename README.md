@@ -14,17 +14,13 @@ Demo: [屑.㏄](https://屑.㏄/)
 
 + `PHP 7.0+`
 + `Nginx 1.15+`
-+ ~~`MySQL 5.5+`~~ （目前还不需要）
++ `MySQL 5.5+`
 
 ### 配置修改
 
-修改 `config.php` 的相关配置并把 `inc` 目录权限设置为 `755` 即可。
+修改 `config.php` 的相关配置
 
 ### URL 重写规则
-
-#### Apache 用户
-
-直接使用 `.htaccess` 文件即可。
 
 #### Nginx 用户
 
@@ -38,5 +34,5 @@ Demo: [屑.㏄](https://屑.㏄/)
 
 ## Todo List
 
-+ 增加 `MySQL` 支持
++ 其他屑功能
 + More...
