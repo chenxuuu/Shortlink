@@ -6,7 +6,7 @@
   // 程序安装路径
   $config['path'] = '/';
   // ID 长度
-  $config['length'] = 3;
+  $config['length'] = 1;
   //自定义前缀url（如果不想自动获取）
   $config['url'] = 'https://屑.㏄/';
   //大标题，显示在标题上面一行

@@ -25,7 +25,7 @@
             }
             // 重复 ID 检测
             if($this->get_url($str)) {
-                return $this->create_id($url, $size);
+                return $this->create_id($url, $size+1);
             } else {
                 return $str;
             }
