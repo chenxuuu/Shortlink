@@ -23,6 +23,12 @@
             {
                 $str .= mb_chr(rand(19968, 40869));
             }
+            // 重复 ID 检测
+            if($this->get_url($str)) {
+                return $this->create_id($url, $size);
+            } else {
+                return $str;
+            }
             return $str;
         }
         // 查询 ID 号
