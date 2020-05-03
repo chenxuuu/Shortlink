@@ -1,10 +1,10 @@
-# ShortLink
+# 屑链生成
 
 代码基于**基于 [CRZ.im](https://github.com/Caringor/CRZ.im) 二次开发的 [Shortlink](https://github.com/renbaoshuo/Shortlink)** 三次开发，感谢原作者们的辛勤劳动。
 
 ## 概述
 
-这是一个网址缩短服务的网站的源代码。
+这是一个网址缩短服务的网站的源代码，生成等待结果包含中文字符。
 
 Demo: [屑.㏄](https://屑.㏄/)
 
