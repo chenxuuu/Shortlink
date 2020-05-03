@@ -1,6 +1,7 @@
 <?php
-  	// 引入类
-	require_once('inc/require.php');
+    // 引入配置文件
+    require_once('config.php');
+    require_once('inc/functions.php');
 ?>
 <!DOCTYPE HTML>
 <html>

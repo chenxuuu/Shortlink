@@ -33,6 +33,6 @@ CREATE TABLE `urls` (
   `id` VARCHAR(10),
   `data` text,
   PRIMARY KEY  (`uid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 */
 ?>

@@ -4,8 +4,20 @@
             global $conn;
             $this->conn = $conn;
         }
+        //精简url
+        public function tiny_url($url){
+            if(stripos($url,"HTTP://") === 0)
+                $url = substr($url,7,strlen($url));
+            if(stripos($url,"HTTPS://") === 0)
+                $url = substr($url,8,strlen($url));
+            $d = strrpos($url,"#");
+            if($d)
+                $url = substr($url,0,$d);
+            return $url;
+        }
         // 生成短地址
         public function set_url($url, $size = 4) {
+            $url = $this->tiny_url($url);
             $id = $this->get_id($url);
             if(!$id) {
                 $id = $this->create_id($url, $size);
