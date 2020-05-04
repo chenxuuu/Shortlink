@@ -46,7 +46,7 @@
             $str = "";
             for($i=0;$i<$size;$i++)
             {
-                $str .= mb_chr(rand(19968, 40869));
+                $str .= mb_chr(rand(0x2E80, 0x9FFF));
             }
             // 重复 ID 检测
             if($this->get_url($str)) {

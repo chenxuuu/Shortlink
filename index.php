@@ -33,7 +33,7 @@
 				<input id="shorturlcopy" type="button" value="复制" onclick="copyText()" />
 			</div>
 			<div class="footer">
-				连续<?php echo get_expiry();?>天无人访问，链接会被回收<br>
+				连续<?php echo get_expiry();?>天无人访问，链接可能会被回收<br>
 				<?php echo get_hoster();?> | <a href="https://github.com/chenxuuu/shit-url/issues" target="_blank">反馈建议</a>
 			</div>
 	    </div>
