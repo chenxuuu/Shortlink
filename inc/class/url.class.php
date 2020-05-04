@@ -13,6 +13,7 @@
             $d = strrpos($url,"#");
             if($d)
                 $url = substr($url,0,$d);
+            if(substr($url, strlen($url) - 1) == '/') $url = substr($url,0,strlen($url) - 1);
             return $url;
         }
         // 生成短地址
@@ -22,7 +23,8 @@
             $id = $this->get_id($url);
             if(!$id) {
                 $id = $this->create_id($url, $size);
-                if(!mysqli_query($this->conn,"INSERT INTO urls(id,data)VALUES('$id','$url')")){
+                $time = date("Y-m-d H:i:s");
+                if(!mysqli_query($this->conn,"INSERT INTO urls(id,data,time)VALUES('$id','$url','$time')")){
                     exit('get url error'.mysqli_error($this->conn));
                 }
             }
@@ -69,13 +71,29 @@
             }
         }
         // 查询目标地址
-        public function get_url($id) {
-            $check_query = mysqli_query($this->conn,"select data from urls where id='$id' limit 1");
+        public function get_url($id,$update = false) {
+            $check_query = mysqli_query($this->conn,"select * from urls where id='$id' limit 1");
             if(!$check_query){
                 return false;
             }
             $result = mysqli_fetch_array($check_query,MYSQLI_ASSOC);
             if($result){
+                if($update)//是否更新日期
+                {
+                    $time = date("Y-m-d H:i:s");
+                    mysqli_query($this->conn,"update urls set time='$time' where id='$id'");
+                }
+                else
+                {
+                    $date1 = strtotime($result["time"]);
+                    $date2 = strtotime(date("Y-m-d H:i:s"));
+                    $days =abs(round(($date1 - $date2) / 86400));
+                    if($days > get_expiry())//超过设定时间，删除
+                    {
+                        mysqli_query($this->conn,"delete from urls where id='$id'");
+                        return false;
+                    }
+                }
                 return $result["data"];
             }
             else{

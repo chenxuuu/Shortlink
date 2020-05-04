@@ -11,6 +11,11 @@
             return $config['bigTitle']."<br>";
         }
     }
+    // 获取链接有效期
+    function get_expiry() {
+        global $config;
+        return $config['expiry'];
+    }
     // 获取网站标题
     function get_title() {
         global $config;

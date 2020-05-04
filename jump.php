@@ -6,7 +6,7 @@
   	if(isset($_GET['id'])) {
     	$url_c = new url();
     	// 获取目标网址
-    	$url = $url_c->get_url($_GET['id']);
+    	$url = $url_c->get_url($_GET['id'],true);
 		// 重定向至目标网址
 		if(!(stripos($url,"HTTP://") === 0 || stripos($url,"HTTPS://") === 0) && $url)
 			$url = "http://".$url;

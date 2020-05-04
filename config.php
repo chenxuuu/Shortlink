@@ -17,6 +17,8 @@
   $config['description'] = '最屑的短链接服务站：屑到网址都不会被自动标蓝';
   //网站底部的信息
   $config['hoster'] = 'provide by <a href="https://www.chenxublog.com/">晨旭</a>';
+  //链接有效期，单位天
+  $config['expiry'] = 30;
 
   //mysql地址
   $config['mysql_host'] = "127.0.0.1";
