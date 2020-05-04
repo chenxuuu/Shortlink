@@ -17,6 +17,7 @@
         }
         // 生成短地址
         public function set_url($url, $size = 4) {
+            global $config;
             $url = $this->tiny_url($url);
             $id = $this->get_id($url);
             if(!$id) {
@@ -25,7 +26,17 @@
                     exit('get url error'.mysqli_error($this->conn));
                 }
             }
-            $s_url = get_uri() . $id;
+            $s_url = $id;
+            if($config['url'] != "")//自定义前缀
+            {
+                $hurl = $config['url'];
+                if(substr($hurl, strlen($hurl) - 1) != '/') $hurl .= '/';
+                $s_url = $hurl . $s_url;
+            }
+            else
+            {
+                $s_url = get_uri() . $s_url;
+            }
             return $s_url;
         }
         // 生成地址 ID

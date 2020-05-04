@@ -57,12 +57,6 @@
     // 获取程序所在路径
     function get_uri() {
         global $config;
-        if($config['url'] != "")
-        {
-            $url = $config['url'];
-            if(substr($url, strlen($url) - 1) != '/') $url .= '/';
-            return $url;
-        }
         // 获取传输协议
         $url = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
         // 获取域名
@@ -72,6 +66,5 @@
         if(substr($url, strlen($url) - 1) != '/') $url .= '/';
         // 返回值
         return $url;
-        return "https://屑.㏄/";
     }
 ?>

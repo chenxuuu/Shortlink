@@ -33,7 +33,8 @@
 				<input id="shorturlcopy" type="button" value="复制" onclick="copyText()" />
 			</div>
 			<div class="footer">
-				<?php echo get_hoster();?> | <a href="https://github.com/chenxuuu/Shortlink" target="_blank">源码</a>
+				连续30天无人访问，链接会被回收<br>
+				<?php echo get_hoster();?> | <a href="https://github.com/chenxuuu/shit-url/issues" target="_blank">反馈建议</a>
 			</div>
 	    </div>
 		<!--嵌入 JS 代码-->
