@@ -16,7 +16,7 @@
             if($d)
                 $url = substr($url,0,$d);
             if(substr($url, strlen($url) - 1) == '/') $url = substr($url,0,strlen($url) - 1);
-            return $url;
+            return str_replace("'","%27",str_replace("\\","%5C",$url));
         }
         // 生成短地址
         public function set_url($url, $size = 4) {
@@ -74,6 +74,7 @@
         }
         // 查询目标地址
         public function get_url($id,$update = false) {
+            $id = str_replace("'","%27",str_replace("\\","%5C",$id));
             $check_query = mysqli_query($this->conn,"select * from urls where id='$id' limit 1");
             if(!$check_query){
                 return false;

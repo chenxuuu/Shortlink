@@ -34,6 +34,7 @@ CREATE TABLE `urls` (
   `uid` mediumint(8) unsigned NOT NULL auto_increment,
   `id` VARCHAR(10),
   `data` text,
+  `time` datetime,
   PRIMARY KEY  (`uid`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 */
