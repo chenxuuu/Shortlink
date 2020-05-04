@@ -9,7 +9,9 @@
             if(stripos($url,"HTTP://") === 0)
                 $url = substr($url,7,strlen($url));
             if(stripos($url,"HTTPS://") === 0)
-                $url = substr($url,8,strlen($url));
+            {
+                $url = "//".substr($url,8,strlen($url));
+            }
             $d = strrpos($url,"#");
             if($d)
                 $url = substr($url,0,$d);
