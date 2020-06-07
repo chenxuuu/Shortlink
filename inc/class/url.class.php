@@ -12,9 +12,6 @@
             {
                 $url = "//".substr($url,8,strlen($url));
             }
-            $d = strrpos($url,"#");
-            if($d)
-                $url = substr($url,0,$d);
             if(substr($url, strlen($url) - 1) == '/') $url = substr($url,0,strlen($url) - 1);
             return str_replace("'","%27",str_replace("\\","%5C",$url));
         }
@@ -22,6 +19,15 @@
         public function set_url($url, $size = 4) {
             global $config;
             $url = $this->tiny_url($url);
+            //切割出#后的数据
+            $last = strrpos($url,"#");
+            $last_text = "";
+            if($last){
+                $arr_list = explode("#",$url);
+                array_shift($arr_list);
+                $last_text = "#" . implode("#", $arr_list);
+                $url = substr($url,0,$last);
+            }
             $id = $this->get_id($url);
             if(!$id) {
                 $id = $this->create_id($url, $size);
@@ -41,6 +47,8 @@
             {
                 $s_url = get_uri() . $s_url;
             }
+            if($last)
+                $s_url = $s_url . $last_text;
             return $s_url;
         }
         // 生成地址 ID
